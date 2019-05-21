@@ -1,3 +1,14 @@
+!pip install gluoncv
+!pip install mxnet
+!pip install shapely
+!pip install pascal-voc-writer
+
+!git clone https://github.com/tensorflow/models.git
+!apt-get -qq install libprotobuf-java protobuf-compiler
+!protoc ./models/research/object_detection/protos/string_int_label_map.proto --python_out=.
+!cp -R models/research/object_detection/ object_detection/
+!rm -rf models
+
 import numpy as np
 import pandas as pd
 import os
@@ -13,6 +24,9 @@ from matplotlib import pyplot as plt
 import matplotlib.path as mpltPath
 
 import tensorflow as tf
+
+from object_detection.utils import label_map_util
+from object_detection.utils import visualization_utils as vis_util
 
 from tensorflow.keras import applications
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
