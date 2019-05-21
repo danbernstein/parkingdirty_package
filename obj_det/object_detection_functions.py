@@ -33,9 +33,6 @@ import datetime
 from PIL import Image, ImageOps
 import scipy.misc
 
-from object_detection.utils import label_map_util
-from object_detection.utils import visualization_utils as vis_util
-
 import time
 import csv
 from datetime import datetime
